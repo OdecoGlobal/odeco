@@ -1,4 +1,5 @@
 import { Mail, Phone } from 'lucide-react';
+import ContactForm from './contact-form';
 
 const contactInfo = [
   {
@@ -9,7 +10,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Phone',
-    value: 'odecoglobal@gmail.com',
+    value: '+234 (81) 0000 0000',
   },
 ];
 const ContactComponent = () => {
@@ -23,21 +24,25 @@ const ContactComponent = () => {
         </p>
       </div>
 
-      <div className="space-y-4 mt-9">
-        <h4 className="font-semibold text-lg">Contact Information</h4>
-        <div>
-          {contactInfo.map(info => (
-            <div key={info.title} className="flex items-center gap-2">
-              <div className="bg-muted-foreground/40 p-2 rounded-lg">
-                <info.icon className="w-5 h-5" />
+      {/* CONATCT */}
+      <div className="space-y-3 md:flex md:items-center md:justify-between md:gap-4 flex-wrap">
+        <div className="space-y-4 mt-9">
+          <h4 className="font-semibold text-lg">Contact Information</h4>
+          <div className="space-y-4">
+            {contactInfo.map(info => (
+              <div key={info.title} className="flex items-center gap-2">
+                <div className="bg-muted-foreground/40 p-2 rounded-lg">
+                  <info.icon className="w-5 h-5" />
+                </div>
+                <div className="text-sm">
+                  <p className="font-semibold">{info.title}</p>
+                  <p className="text-muted-foreground">{info.value}</p>
+                </div>
               </div>
-              <div className="text-sm">
-                <p className="font-semibold">{info.title}</p>
-                <p className="text-muted-foreground">{info.value}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+        <ContactForm />
       </div>
     </section>
   );
