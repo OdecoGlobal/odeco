@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -127,7 +127,7 @@
   }
 
   .flex-center {
-    @apply flex items-center justify-center;
+    @apply flex items-center justify-center flex-wrap;
   }
 
   .flex-between {
@@ -136,5 +136,8 @@
 
   .wrapper {
     @apply max-w-7xl w-full p-5 md:px-10 lg:mx-auto;
+  }
+  .btn {
+    @apply min-w-[120px];
   }
 }
