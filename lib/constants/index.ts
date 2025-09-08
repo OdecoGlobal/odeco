@@ -24,6 +24,6 @@ export const pages = [
   },
   {
     name: 'Contact',
-    href: '/contact',
+    href: '/#contact',
   },
 ];
