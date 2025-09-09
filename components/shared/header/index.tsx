@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { pages } from '@/lib/constants';
+// import { pages } from '@/lib/constants';
 import { ModeToggle } from '../mode-toogle';
 import Menu from './menu';
 import NavLink from './nav-link';

@@ -26,8 +26,7 @@ export const pages = [
 const NavLink = () => {
   const sections = pages.map(page => page.href);
   const active = useScrollSpy(sections, 100);
-  console.log('ACTIVE', active);
-  console.log(sections);
+
   return (
     <>
       {pages.map(page => (
