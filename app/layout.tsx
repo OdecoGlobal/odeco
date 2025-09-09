@@ -21,7 +21,7 @@ export default function MainRootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} antialiased relative`}>
         <ThemeProvider
           attribute="class"
           enableSystem

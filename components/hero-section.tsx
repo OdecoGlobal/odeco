@@ -1,6 +1,5 @@
 import { cn } from '@/lib/utils';
 import { Fira_Code } from 'next/font/google';
-import Marquee from 'react-fast-marquee';
 import { Button } from './ui/button';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import Link from 'next/link';
@@ -38,7 +37,7 @@ const HeroSection = () => {
         >
           Full-stack
         </h3>
-        <div className="flex flex-col lg:flex-row lg:items-center gap-2">
+        <div className="flex flex-col gap-2 lg:flex-row lg:items-center">
           <h3
             className={cn(
               firaCode.className,
@@ -56,7 +55,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="flex-center gap-2">
+      <div className="gap-2 flex-center">
         {socialIcons.map(icon => (
           <Button asChild key={icon.name} variant="outline" className="btn">
             <a href={icon.href} target="_blank">
@@ -66,7 +65,7 @@ const HeroSection = () => {
         ))}
       </div>
 
-      <div className="flex-center gap-2">
+      <div className="gap-2 flex-center">
         <Button asChild className="btn">
           <Link href="#projects">View My Work</Link>
         </Button>

@@ -5,26 +5,26 @@ import Menu from './menu';
 
 const Header = () => {
   return (
-    <header>
+    <nav className="sticky top-0 z-20 p-5 border-b shadow-md bg-background/80 backdrop-blur-md">
       <div className="wrapper flex-between">
         <Link href="/">
           {/* LOGO */}
-          <h1 className="text-xs">OKECHUKWU CHIDERA</h1>
+          <h1 className="text-xs">OC</h1>
         </Link>
 
-        <nav className="hidden md:flex w-full max-w-xs gap-8">
+        <div className="hidden w-full max-w-xs gap-8 md:flex">
           {pages.map(page => (
             <Link key={page.name} href={page.href}>
               {page.name}
             </Link>
           ))}
-        </nav>
-        <div className="flex-between space-x-3">
+        </div>
+        <div className="space-x-3 flex-between">
           <ModeToggle />
           <Menu />
         </div>
       </div>
-    </header>
+    </nav>
   );
 };
 
