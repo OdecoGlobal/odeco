@@ -27,12 +27,12 @@ const socialIcons = [
 
 const HeroSection = () => {
   return (
-    <section id="#" className="space-y-3">
+    <>
       <div>
         <h3
           className={cn(
             firaCode.className,
-            'text-5xl sm:text-6xl md:text-8xl font-semibold tracking-wider'
+            'text-5xl sm:text-6xl md:text-8xl font-semibold tracking-wider',
           )}
         >
           Full-stack
@@ -41,7 +41,7 @@ const HeroSection = () => {
           <h3
             className={cn(
               firaCode.className,
-              'text-5xl sm:text-6xl  md:text-8xl font-semibold tracking-wider lg:order-2'
+              'text-5xl sm:text-6xl  md:text-8xl font-semibold tracking-wider lg:order-2',
             )}
           >
             Developer
@@ -78,7 +78,7 @@ const HeroSection = () => {
           </Button>
         ))}
       </div>
-    </section>
+    </>
   );
 };
 

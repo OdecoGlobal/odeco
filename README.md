@@ -40,7 +40,7 @@ The goal was to create something:
 
 ## 📸 Preview
 
-![Portfolio Screenshot](./public/image/portfolio-preview.png)
+![Portfolio Screenshot](./public/img/portfolio-preview.png)
 
 ---
 
@@ -49,7 +49,7 @@ The goal was to create something:
 Clone the repo and run locally:
 
 ```bash
-git clone https://github.com/<your-username>/portfolio.git
+git clone https://github.com/OdecoGlobal/odeco
 cd portfolio
 npm install
 npm run dev

@@ -38,8 +38,8 @@ export const projects = [
     description:
       'My personal portfolio website built to showcase my skills, projects, and experience as a full-stack developer. It features a clean, responsive design with smooth animations and an intuitive layout for easy navigation. Visitors can explore my work, view project details, and download my resume directly. The site also includes a contact form that allows potential clients or employers to reach out seamlessly. Built with modern tools and best practices, the portfolio demonstrates both technical ability and attention to user-friendly design.',
     tech: ['Next.js', 'TailwindCSS', 'ShadcnUi', 'Resend'],
-    link: 'https://myportfolio.com',
-    github: 'https://github.com/username/portfolio',
-    image: '/img/portfolio-preview.png',
+    link: 'https://www.odeco.dev/',
+    github: 'https://github.com/OdecoGlobal/odeco',
+    image: '/img/preview.png',
   },
 ];

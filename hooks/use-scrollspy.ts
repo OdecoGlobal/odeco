@@ -9,7 +9,7 @@ export function useScrollSpy(sectionIds: string[], offset = 0) {
         const visibleSections = entries.filter(entry => entry.isIntersecting);
         if (visibleSections.length > 0) {
           const topMost = visibleSections.reduce((a, b) =>
-            a.boundingClientRect.top < b.boundingClientRect.top ? a : b
+            a.boundingClientRect.top < b.boundingClientRect.top ? a : b,
           );
           setActiveId(topMost.target.id);
         }
@@ -17,7 +17,7 @@ export function useScrollSpy(sectionIds: string[], offset = 0) {
       {
         rootMargin: `-${offset}px 0px 0px 0px`,
         threshold: 0.6,
-      }
+      },
     );
 
     sectionIds.forEach(id => {

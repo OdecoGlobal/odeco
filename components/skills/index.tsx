@@ -86,10 +86,10 @@ const SkillsComponent = () => {
     </div>
   );
   return (
-    <section id="#skills" className="space-y-4">
+    <>
       <Marquee>{skillsData1.map(renderSkillBadge)}</Marquee>
       <Marquee direction="right">{skillsData2.map(renderSkillBadge)}</Marquee>
-    </section>
+    </>
   );
 };
 

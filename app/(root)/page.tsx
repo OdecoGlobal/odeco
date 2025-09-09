@@ -5,11 +5,19 @@ import SkillsComponent from '@/components/skills';
 
 const HomePage = () => {
   return (
-    <main className="space-y-6">
-      <HeroSection />
-      <ProjectComponent />
-      <SkillsComponent />
-      <ContactComponent />
+    <main className="space-y-8">
+      <section id="home" className="space-y-6 scroll-mt-32">
+        <HeroSection />
+      </section>
+      <section id="projects" className="scroll-mt-32">
+        <ProjectComponent />
+      </section>
+      <section id="skills" className="space-y-4 scroll-mt-32">
+        <SkillsComponent />
+      </section>
+      <section id="contact" className="p-6 space-y-3 bg-muted scroll-mt-32">
+        <ContactComponent />
+      </section>
     </main>
   );
 };

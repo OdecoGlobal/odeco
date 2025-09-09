@@ -2,7 +2,6 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import z from 'zod';
 import {
   Form,
   FormControl,
@@ -13,16 +12,13 @@ import {
 } from '../ui/form';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
-import { Send } from 'lucide-react';
+import { Loader2, Send } from 'lucide-react';
 import { Card, CardContent } from '../ui/card';
+import { contactFormSchema } from '@/lib/schema';
+import { contactFormType } from '@/types';
+import { sendContactEmail } from '@/lib/actions/email-action';
+import { toast } from 'sonner';
 
-export const contactFormSchema = z.object({
-  name: z.string().min(3, 'Name should be at least 3 characters'),
-  email: z.email(),
-  subject: z.string().min(1, 'Subject is required'),
-  message: z.string().min(1, 'Message is required'),
-});
-export type contactFormType = z.infer<typeof contactFormSchema>;
 const ContactForm = () => {
   const form = useForm<contactFormType>({
     resolver: zodResolver(contactFormSchema),
@@ -33,20 +29,29 @@ const ContactForm = () => {
       message: '',
     },
   });
-  const onSubmit = (values: contactFormType) => {
-    console.log(values);
+  const onSubmit = async (values: contactFormType) => {
+    const res = await sendContactEmail(values);
+    if (res.success) {
+      toast.success('Success', {
+        description: 'Message sent! ✅',
+      });
+      form.reset();
+    } else {
+      toast.error(`Failed to send: ${res.error}`);
+    }
   };
+  const { formState } = form;
   return (
     <Card>
       <CardContent>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            <div className="md:flex md:flex-row md:items-center gap-4 space-y-3 md:space-y-0">
+            <div className="gap-4 space-y-3 md:flex md:flex-row md:items-center md:space-y-0">
               <FormField
                 control={form.control}
                 name="name"
                 render={({ field }) => (
-                  <FormItem className=" text-sm w-full">
+                  <FormItem className="w-full text-sm ">
                     <FormLabel>Name</FormLabel>
                     <FormControl>
                       <Input
@@ -64,7 +69,7 @@ const ContactForm = () => {
                 control={form.control}
                 name="email"
                 render={({ field }) => (
-                  <FormItem className="text-sm w-full">
+                  <FormItem className="w-full text-sm">
                     <FormLabel>Email</FormLabel>
                     <FormControl>
                       <Input
@@ -83,7 +88,7 @@ const ContactForm = () => {
               control={form.control}
               name="subject"
               render={({ field }) => (
-                <FormItem className=" text-sm w-full">
+                <FormItem className="w-full text-sm ">
                   <FormLabel>Subject</FormLabel>
                   <FormControl>
                     <Input
@@ -100,7 +105,7 @@ const ContactForm = () => {
               control={form.control}
               name="message"
               render={({ field }) => (
-                <FormItem className=" text-sm w-full">
+                <FormItem className="w-full text-sm ">
                   <FormLabel>Message</FormLabel>
                   <FormControl>
                     <Input
@@ -113,8 +118,18 @@ const ContactForm = () => {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="btn">
-              <Send /> Send Message
+            <Button
+              type="submit"
+              className="btn"
+              disabled={formState.isSubmitting}
+            >
+              {formState.isSubmitting ? (
+                <Loader2 className="w-4 h-4 animate-spin" />
+              ) : (
+                <>
+                  <Send /> Send Message
+                </>
+              )}
             </Button>
           </form>
         </Form>

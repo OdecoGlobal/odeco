@@ -10,10 +10,10 @@ export const pages = [
     name: 'Home',
     href: '/',
   },
-  {
-    name: 'About',
-    href: '/#about',
-  },
+  // {
+  //   name: 'About',
+  //   href: '/#about',
+  // },
   {
     name: 'Projects',
     href: '/#projects',
@@ -27,8 +27,8 @@ export const pages = [
     href: '/#contact',
   },
 
-  {
-    name: 'Blog',
-    href: '/blog',
-  },
+  // {
+  //   name: 'Blog',
+  //   href: '/blog',
+  // },
 ];

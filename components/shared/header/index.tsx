@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { pages } from '@/lib/constants';
 import { ModeToggle } from '../mode-toogle';
 import Menu from './menu';
+import NavLink from './nav-link';
 
 const Header = () => {
   return (
@@ -9,15 +10,18 @@ const Header = () => {
       <div className="wrapper flex-between">
         <Link href="/">
           {/* LOGO */}
-          <h1 className="text-xs">OC</h1>
+          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-muted">
+            <h1 className="text-xs">OC</h1>
+          </div>
         </Link>
 
         <div className="hidden w-full max-w-xs gap-8 md:flex">
-          {pages.map(page => (
+          <NavLink />
+          {/* {pages.map(page => (
             <Link key={page.name} href={page.href}>
               {page.name}
             </Link>
-          ))}
+          ))} */}
         </div>
         <div className="space-x-3 flex-between">
           <ModeToggle />
