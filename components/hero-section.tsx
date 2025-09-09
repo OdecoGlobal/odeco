@@ -32,7 +32,7 @@ const HeroSection = () => {
         <h3
           className={cn(
             firaCode.className,
-            'text-4xl md:text-8xl font-semibold tracking-wider'
+            'text-5xl sm:text-6xl md:text-8xl font-semibold tracking-wider'
           )}
         >
           Full-stack
@@ -41,7 +41,7 @@ const HeroSection = () => {
           <h3
             className={cn(
               firaCode.className,
-              'text-4xl md:text-8xl font-semibold tracking-wider lg:order-2'
+              'text-5xl sm:text-6xl  md:text-8xl font-semibold tracking-wider lg:order-2'
             )}
           >
             Developer
@@ -53,16 +53,6 @@ const HeroSection = () => {
             extraordinary!
           </p>
         </div>
-      </div>
-
-      <div className="gap-2 flex-center">
-        {socialIcons.map(icon => (
-          <Button asChild key={icon.name} variant="outline" className="btn">
-            <a href={icon.href} target="_blank">
-              <icon.icon /> {icon.name}
-            </a>
-          </Button>
-        ))}
       </div>
 
       <div className="gap-2 flex-center">
@@ -78,6 +68,15 @@ const HeroSection = () => {
             Resume
           </Link>
         </Button>
+      </div>
+      <div className="gap-2 flex-center">
+        {socialIcons.map(icon => (
+          <Button asChild key={icon.name} variant="outline" size="icon">
+            <a href={icon.href} target="_blank" aria-label={icon.name}>
+              <icon.icon />
+            </a>
+          </Button>
+        ))}
       </div>
     </section>
   );
