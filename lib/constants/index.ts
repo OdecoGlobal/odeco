@@ -12,18 +12,23 @@ export const pages = [
   },
   {
     name: 'About',
-    href: '/about',
+    href: '/#about',
   },
   {
     name: 'Projects',
-    href: '/projects',
+    href: '/#projects',
   },
   {
-    name: 'Blog',
-    href: '/blog',
+    name: 'Skills',
+    href: '/#skills',
   },
   {
     name: 'Contact',
     href: '/#contact',
+  },
+
+  {
+    name: 'Blog',
+    href: '/blog',
   },
 ];

@@ -28,7 +28,7 @@ const socialIcons = [
 
 const HeroSection = () => {
   return (
-    <section className="space-y-3">
+    <section id="#" className="space-y-3">
       <div>
         <h3
           className={cn(
@@ -80,20 +80,6 @@ const HeroSection = () => {
           </Link>
         </Button>
       </div>
-      <Marquee>
-        <p className="text-sm">
-          I&apos;m Okechukwu Chidera, an experienced full-stack developer
-          passionate about building scalable web and mobile applications using
-          modern technologies. With a strong foundation in both front-end and
-          back-end development, I specialize in creating robust, user-friendly
-          solutions that drive impact and efficiency. Dive into my portfolio to
-          explore the innovative projects I’ve crafted and see how I can help
-          bring your ideas to life with cutting-edge technology. Let’s
-          collaborate to create something extraordinary! I&apos;m Okechukwu
-          Chidera, an experienced full-stack developer whose goal is to create
-          scalable web and mobile applications using modern technologies.
-        </p>
-      </Marquee>
     </section>
   );
 };
