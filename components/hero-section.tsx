@@ -1,29 +1,11 @@
 import { cn } from '@/lib/utils';
 import { Fira_Code } from 'next/font/google';
 import { Button } from './ui/button';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import Link from 'next/link';
-import { FaXTwitter } from 'react-icons/fa6';
 import { DownloadCloudIcon } from 'lucide-react';
+import SocialIcons from './shared/social-icons';
 
 const firaCode = Fira_Code({ subsets: ['latin'] });
-const socialIcons = [
-  {
-    name: 'Github',
-    href: 'https://github.com/OdecoGlobal',
-    icon: FaGithub,
-  },
-  {
-    name: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/okechukwu-chidera/',
-    icon: FaLinkedin,
-  },
-  {
-    name: 'X',
-    href: 'https://x.com/M_Derah',
-    icon: FaXTwitter,
-  },
-];
 
 const HeroSection = () => {
   return (
@@ -63,21 +45,13 @@ const HeroSection = () => {
           <Link href="#contact">Get In Touch</Link>
         </Button>
         <Button asChild className="btn">
-          <Link href="okechukwu-chidera-resume.pdf" download>
+          <Link href="OKECHUKWU_CHIDERA MUNACHIMSO_RESUME.pdf" download>
             <DownloadCloudIcon />
             Resume
           </Link>
         </Button>
       </div>
-      <div className="gap-2 flex-center">
-        {socialIcons.map(icon => (
-          <Button asChild key={icon.name} variant="outline" size="icon">
-            <a href={icon.href} target="_blank" aria-label={icon.name}>
-              <icon.icon />
-            </a>
-          </Button>
-        ))}
-      </div>
+      <SocialIcons />
     </>
   );
 };

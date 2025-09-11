@@ -1,4 +1,4 @@
-import { Mail, Phone } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import ContactForm from './contact-form';
 
 const contactInfo = [
@@ -6,11 +6,6 @@ const contactInfo = [
     icon: Mail,
     title: 'Email',
     value: 'odecoglobal@gmail.com',
-  },
-  {
-    icon: Phone,
-    title: 'Phone',
-    value: '+234 (81) 0000 0000',
   },
 ];
 const ContactComponent = () => {
