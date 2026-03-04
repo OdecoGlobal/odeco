@@ -3,25 +3,21 @@ import Link from 'next/link';
 import { ModeToggle } from '../mode-toogle';
 import Menu from './menu';
 import NavLink from './nav-link';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const Header = () => {
   return (
-    <nav className="sticky top-0 z-20 p-5 border-b shadow-md bg-background/80 backdrop-blur-md">
+    <nav className="sticky top-0 z-20  border-b shadow-md bg-background/80 backdrop-blur-md">
       <div className="wrapper flex-between">
         <Link href="/">
-          {/* LOGO */}
-          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-muted">
-            <h1 className="text-xs">OC</h1>
-          </div>
+          <Avatar className="w-15 h-15">
+            <AvatarImage src="/img/logo.png" alt="Logo" />
+            <AvatarFallback>Od</AvatarFallback>
+          </Avatar>
         </Link>
 
         <div className="hidden w-full max-w-xs gap-8 md:flex">
           <NavLink />
-          {/* {pages.map(page => (
-            <Link key={page.name} href={page.href}>
-              {page.name}
-            </Link>
-          ))} */}
         </div>
         <div className="space-x-3 flex-between">
           <ModeToggle />

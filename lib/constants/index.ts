@@ -8,27 +8,19 @@ export const SERVER_URL =
 export const pages = [
   {
     name: 'Home',
-    href: '/',
+    href: null,
   },
-  // {
-  //   name: 'About',
-  //   href: '/#about',
-  // },
+
   {
     name: 'Projects',
-    href: '/#projects',
+    href: 'projects',
   },
   {
     name: 'Skills',
-    href: '/#skills',
+    href: 'skills',
   },
   {
     name: 'Contact',
-    href: '/#contact',
+    href: 'contact',
   },
-
-  // {
-  //   name: 'Blog',
-  //   href: '/blog',
-  // },
 ];

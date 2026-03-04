@@ -1,5 +1,4 @@
 'use client';
-import Link from 'next/link';
 import {
   Sheet,
   SheetContent,
@@ -8,8 +7,8 @@ import {
   SheetTrigger,
 } from '../../ui/sheet';
 import { MenuIcon } from 'lucide-react';
-import { pages } from '@/lib/constants';
 import { useState } from 'react';
+import NavLink from './nav-link';
 
 const Menu = () => {
   const [open, setOpen] = useState(false);
@@ -22,15 +21,7 @@ const Menu = () => {
         <SheetContent className="flex flex-col items-center">
           <SheetTitle className="mt-10 sr-only">Menu</SheetTitle>
           <SheetDescription className="sr-only" />
-          {pages.map(page => (
-            <Link
-              key={page.name}
-              href={page.href}
-              onClick={() => setOpen(false)}
-            >
-              {page.name}
-            </Link>
-          ))}
+          <NavLink />
         </SheetContent>
       </Sheet>
     </div>

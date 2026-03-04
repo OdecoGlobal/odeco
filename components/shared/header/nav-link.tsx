@@ -1,48 +1,33 @@
 'use client';
 import { useScrollSpy } from '@/hooks/use-scrollspy';
+import { pages } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
-export const pages = [
-  {
-    name: 'Home',
-    href: 'home',
-  },
-
-  {
-    name: 'Projects',
-    href: 'projects',
-  },
-  {
-    name: 'Skills',
-    href: 'skills',
-  },
-  {
-    name: 'Contact',
-    href: 'contact',
-  },
-];
-
 const NavLink = () => {
-  const sections = pages.map(page => page.href);
-  const active = useScrollSpy(sections, 100);
+  const sections = pages
+    .map(page => page.href)
+    .filter((href): href is string => href !== null);
+  const active = useScrollSpy(sections, 60);
 
   return (
     <>
-      {pages.map(page => (
-        <Link
-          key={page.name}
-          href={`#${page.href}`}
-          className={cn(
-            'pb-1 transition-colors hover:border-b-2',
-            active === page.href
-              ? 'border-b-2 border-foreground font-semibold'
-              : '',
-          )}
-        >
-          {page.name}
-        </Link>
-      ))}
+      {pages.map(page => {
+        const isHome = page.href === null;
+        const isActive = isHome ? active === null : active === page.href;
+        return (
+          <Link
+            key={page.name}
+            href={isHome ? '/' : `#${page.href}`}
+            className={cn(
+              'pb-1 transition-colors hover:border-b-2',
+              isActive && 'border-b-2 border-foreground font-semibold',
+            )}
+          >
+            {page.name}
+          </Link>
+        );
+      })}
     </>
   );
 };
