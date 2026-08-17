@@ -10,6 +10,16 @@ export const projects = [
   },
 
   {
+    title: 'ScholaHQ — School Management Platform',
+    description:
+      'Built and maintained the frontend of a school management platform using Next.js, React, TypeScript, and Tailwind CSS. Developed responsive, role-based dashboards and reusable components for student, staff, academic, and administrative workflows. Integrated REST APIs and implemented form handling, validation, loading/error states, and efficient data-fetching patterns to deliver a scalable and maintainable user experience..',
+    tech: ['Next.js', 'Tailwind', 'TypeScript', 'TailwindCSS'],
+    link: 'https://scholahq.com/',
+    github: 'https://github.com/ScholaHq/web-app-client.git',
+    image: '/img/schola.png',
+  },
+
+  {
     title: 'E-Commerce Platform - Medical Supplies',
     description:
       'Built full e-commerce system with product filtering, cart persistence, and admin order management for a medical supplies business. Features secure authentication for customers and administrators, dynamic product pages with SSR, and inventory management workflow.',
@@ -26,15 +36,6 @@ export const projects = [
     link: 'https://humkeysurgicals.com/',
     github: 'https://github.com/OdecoGlobal/humkey',
     image: '/img/store.png',
-  },
-  {
-    title: 'ScholaHQ — School Management Platform',
-    description:
-      'Built and maintained the frontend of a school management platform using Next.js, React, TypeScript, and Tailwind CSS. Developed responsive, role-based dashboards and reusable components for student, staff, academic, and administrative workflows. Integrated REST APIs and implemented form handling, validation, loading/error states, and efficient data-fetching patterns to deliver a scalable and maintainable user experience..',
-    tech: ['Next.js', 'Tailwind', 'TypeScript', 'TailwindCSS'],
-    link: 'https://scholahq.com/',
-    github: 'https://github.com/ScholaHq/web-app-client.git',
-    image: '/img/schola.png',
   },
   // {
   //   title: 'Hotel Booking App',
