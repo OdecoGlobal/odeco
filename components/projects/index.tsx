@@ -4,7 +4,7 @@ import { ArrowUpRightFromSquare } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '../ui/button';
-import { FaGithub } from 'react-icons/fa';
+// import { FaGithub } from 'react-icons/fa';
 import { Badge } from '../ui/badge';
 import { Separator } from '../ui/separator';
 
@@ -50,11 +50,11 @@ const ProjectComponent = () => {
                     <ArrowUpRightFromSquare /> Live Demo
                   </Link>
                 </Button>
-                <Button asChild className="btn" variant="secondary">
+                {/* <Button asChild className="btn" variant="secondary">
                   <Link href={project.github}>
                     <FaGithub /> Code
                   </Link>
-                </Button>
+                </Button> */}
               </div>
             </header>
             <Separator />

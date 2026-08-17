@@ -45,9 +45,9 @@ const HeroSection = () => {
           <Link href="#contact">Get In Touch</Link>
         </Button>
         <Button asChild className="btn">
-          <Link href="OKECHUKWU_CHIDERA MUNACHIMSO_RESUME.pdf" download>
+          <Link href="Okechukwu_Chidera _Resume_1.pdf" download>
             <DownloadCloudIcon />
-            Resume
+            Résumé
           </Link>
         </Button>
       </div>
